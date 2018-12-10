@@ -1,7 +1,7 @@
-# The Great TikZlings Extravaganza 2018
+# The Great TikZlings Christmas Extravaganza 2018
 
 This repository contains the souce code of the Great TikZlings Extravanganza 2018, created by 
-@u-fischer Ulrike, Gert Fischer, [marmot](https://tex.stackexchange.com/users/121799/marmot), @cereda and @samcarter.
+[Ulrike](https://github.com/u-fischer) & Gert Fischer, [marmot](https://tex.stackexchange.com/users/121799/marmot), [Paulo Cereda](https://github.com/cereda) and [samcarter](https://github.com/samcarter).
 
 The full video is available from https://vimeo.com/305374856
 
