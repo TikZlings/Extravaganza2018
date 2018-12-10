@@ -1,0 +1,100 @@
+% !Mode:: "TeX:UTF-8:Main"
+% arara: pdflatex
+% arara: pdflatex
+% arara: convert: {density: 160, otheroptions: -dispose previous -delay 10 -loop 0, format: gif}
+
+\PassOptionsToPackage{svgnames,x11names}{xcolor}
+\documentclass{beamer}
+
+\usepackage{tikz}
+\usepackage{bbold}
+\usepackage{fourier}
+\usetikzlibrary{overlay-beamer-styles}
+\setbeamertemplate{navigation symbols}{}
+\usetikzlibrary{shadings}
+\usepackage{tikzlings-marmots,tikzducks}
+\usepackage{xfp}
+\usetikzlibrary{shapes.geometric}
+\tikzstyle{witchstars}=[star, star points=5, star point ratio=2.25, draw,inner sep=1.3pt,anchor=outer point 3]
+
+\makeatletter
+
+\newcommand{\mystar}{%
+    \pgfmathsetmacro\xposition{12.4*rnd}
+    \pgfmathsetmacro\yposition{4.5*rnd+4.5}
+    \pgfmathsetmacro\starsize{1.8+1.5*rnd}
+    \pgfmathsetmacro\starcolor{random(10,75)}
+    \ifodd\c@page
+    \node[witchstars,fill=yellow!\starcolor!white,inner sep=\starsize pt] at (\xposition,\yposition) {};
+    \else
+    \node[witchstars,fill=white!\starcolor!yellow,inner sep=\starsize pt] at (\xposition,\yposition) {};
+    \fi
+    }
+\makeatother
+\usepackage{eso-pic}
+
+\AddToShipoutPictureBG{%
+ \AtPageLowerLeft{%
+ \begin{tikzpicture}[overlay,remember picture]
+ \fill[DeepSkyBlue4] (0,0) rectangle (\paperwidth,\paperheight);
+ \pgfmathsetseed{2}
+ \foreach \x in {1,2,...,50}{\mystar}
+ %\fill[white] (0,0) rectangle (\paperwidth,3.5cm);
+ \fill[top color=white,bottom color=LightCyan3] plot[smooth,variable=\x,domain=-1:12.8,samples=82] ({\x},{3.8+0.3*sin(30*(\x-0.5*1/10))})--(12.8,0)--(0,0)--(-1,0);
+ \begin{scope}[xshift=1.5cm,yshift=3.6cm]
+ \begin{scope}[scale=0.3]
+ \filldraw[DarkGoldenrod4!50!black] (-.5,-.5) rectangle ++(1,1.5);
+	\filldraw[Green4!50!black] (0,1)
+	to[bend right] ++(4,0)
+	to[bend left] ++(-3,2)
+	to[bend right] ++(2,0)
+	to[bend left] ++(-2.5,2)
+	to[bend right] ++(1,0)
+	to[bend left] ++(-1.5,2)
+	-- cycle;
+	\filldraw[Green4!50!black] (0,1)
+	to[bend left] ++(-4,0)
+	to[bend right] ++(3,2)
+	to[bend left] ++(-2,0)
+	to[bend right] ++(2.5,2)
+	to[bend left] ++(-1,0)
+	to[bend right] ++(1.5,2)
+	-- cycle;
+\end{scope}
+\end{scope}
+ \end{tikzpicture}}}
+\setbeamertemplate{background}{}
+\setbeamertemplate{background canvas}{}
+\begin{document}
+\begin{frame}[label=cello]
+\vspace*{2.5cm}
+\hspace*{4.3cm}
+\begin{tikzpicture}[scale=1.5,transform shape]
+  \duck[jacket=black,tshirt=white,tie=FireBrick]
+  \node[rotate=-50] at (wing) {\includegraphics[width=1cm,trim=0cm 0cm 9cm 0cm,clip]{cello}};
+  \begin{scope}[overlay]
+  \foreach \x in {0,1,...,20}
+  {%
+   \only<+>{%
+    \node[] at ([xshift=-\x pt]wing) {\includegraphics[width=3cm]{cello-bow}};
+   \begin{scope}[xshift=-0.4cm-\x pt,yshift=-0.3cm,xscale=-1,scale=0.8]
+    \duck[jacket=black,tshirt=white,tie=FireBrick]
+   \end{scope}}
+  }
+  \foreach \x in {20,19,...,0}
+  {%
+   \only<+>{%
+    \node[] at ([xshift=-\x pt]wing) {\includegraphics[width=3cm]{cello-bow}};
+   \begin{scope}[xshift=-0.4cm-\x pt,yshift=-0.3cm,xscale=-1,scale=0.8]
+    \duck[jacket=black,tshirt=white,tie=FireBrick]
+   \end{scope}}
+  }
+  \end{scope}
+\end{tikzpicture}
+\end{frame}
+
+\againframe{cello}
+\againframe{cello}
+\againframe{cello}
+
+\end{document}

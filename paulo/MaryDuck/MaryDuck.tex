@@ -1,0 +1,47 @@
+\documentclass{beamer}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{marypoppins}
+
+\setbeamertemplate{navigation symbols}{}
+
+\usetikzlibrary{calc,decorations.markings}
+
+\def\factor{0.5}
+\setbeamertemplate{background canvas}{
+\begin{tikzpicture}[remember picture,overlay]
+\shade[top color=c139ad7!30!white,bottom color=white] (current page.north west) rectangle (current page.south east);
+\end{tikzpicture}%     
+	\resizebox{\paperwidth}{\paperheight}{\london}
+}
+
+
+
+\setbeamertemplate{background}{%
+\begin{tikzpicture}[remember picture,overlay,
+ decoration={markings, mark=at position \thepage/\insertdocumentendpage with {
+	\node {\scalebox{-1}[1]{\includegraphics[scale=.25]{imgs/duckmary_bag}}};
+}}
+]
+\path[postaction=decorate]
+%  ($(current page.north west)+(-1,0)$) to[out=-30,in=90] 
+%  (current page.center) to[out=-90,in=180,looseness=6,distance=4cm]
+%  (current page.center) to[out=0,in=160]
+%  (current page.south east);
+	(-0.0024, -0.846) .. controls (2.9731, -2.564) and (4.9397, -0.8115) .. (4.9397, -4.2473) .. controls (4.9397, -8.2498) and (-2.9933, -2.7915) .. (0.9993, -3.0728) .. controls (10.1424, -3.7168) and (9.4455, -9.435) .. (6.1477, -7.1566) .. controls (3.4609, -5.3004) and (10.1189, 2.4134) .. (13.8065, -10.4522);
+	
+ 	(1.0976-1.1,9.6540) .. controls (4.0731,7.9361) and (6.0397,9.6885) .. (6.0397,6.2527) .. controls (6.0397,2.2502) and (-1.8528,8.0603) .. (2.0993,7.4272) .. controls (8.2492,6.4422) and (14.2953,3.2759) .. (10.4302,6.7912) .. controls (6.7981,10.0946) and (4.7401,7.5339) .. (14.9065,0.0478);
+	
+\end{tikzpicture}%
+}
+
+\begin{document}
+
+\begin{frame}
+\pause[200]
+\end{frame}
+
+\end{document}
+
+

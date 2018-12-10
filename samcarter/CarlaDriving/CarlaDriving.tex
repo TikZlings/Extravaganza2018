@@ -1,0 +1,27 @@
+\documentclass{beamer}
+
+\usepackage{tikz}
+\usetikzlibrary{overlay-beamer-styles}
+\setbeamertemplate{navigation symbols}{}
+
+\begin{document}
+
+\begin{frame}[plain]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{tikzpicture}[remember picture,overlay]
+  	\node[at=(current page.center),xshift=6cm]{
+   		\includegraphics[height=\paperheight]{Monumentvalley_clean}
+		};
+		\foreach \x in {0,0.15,...,18}{
+			\node<+> at (11.5-0.05*6.5*\x,-3.5+0.05*0.5*\x) {\includegraphics[height=1.5cm]{carlatex}};			
+		}
+		\foreach \x in {0,0.15,...,30}{
+			\node<+>[rotate=20] at (5-0.05*5*\x,-3-0.05*2*\x) {\includegraphics[height=1.5cm]{carlatex}};			
+		}		
+		\node[at=(current page.south east),xshift=-3.2cm,yshift=0.2cm]{\tiny\color{white}\url{https://en.wikipedia.org/wiki/File:Monumentvalley.jpg}};
+  	\node[at=(current page.center),xshift=6cm]{
+   		\includegraphics[height=\paperheight]{Monumentvalley_fg}
+		};		
+	\end{tikzpicture}
+\end{frame}
+
+\end{document}

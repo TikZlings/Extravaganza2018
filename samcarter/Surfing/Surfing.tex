@@ -1,0 +1,82 @@
+% !TeX TS-program = pdflatex
+\documentclass{beamer}
+
+\usepackage{tikz}
+\usetikzlibrary{overlay-beamer-styles}
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamercolor{title}{bg=white,fg=black}
+
+\begin{document}
+
+\begin{frame}[label={surf}]
+
+\begin{tikzpicture}[remember picture,overlay]
+	
+% Background image
+\node[at=(current page.center)]{%
+	\includegraphics[height=\paperheight]{1024px-2010_mavericks_competition_clean}
+};	
+
+% Image credit of background
+\node[at=(current page.south east),xshift=-6.5cm,yshift=0.2cm]{%
+	\tiny\color{white}\url{https://en.wikipedia.org/wiki/File:2010_mavericks_competition.jpg}
+};
+
+% Surfer
+\foreach \x in {-1,-0.6,...,1}{
+	\node<+>[rotate around={\x:(2,-0.4)} ] at (5.3,-0.9) {%
+		\includegraphics[height=\paperheight]{surfer}
+	};	
+}	
+\foreach \x in {1,0.6,...,-1}{
+	\node<+>[rotate around={\x:(2,-0.4)} ] at (5.3,-0.9) {%
+		\includegraphics[height=\paperheight]{surfer}
+	};	
+}	
+
+\pgfsetfillopacity{0.6}
+	\node[at=(current page.center),yshift=-2.8cm]{
+		\begin{beamercolorbox}[sep=0.5cm,dp=-0.2cm,wd=.8\paperwidth,center]{title}%
+			\pgfsetfillopacity{1}%
+ 		\usebeamerfont{title}%
+ 		TUG'19 -- Palo Alto, CA -- Aug 9-11, 2019
+		\end{beamercolorbox}
+};
+		
+\end{tikzpicture}
+\end{frame}
+
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+\againframe{surf}
+
+
+\end{document}

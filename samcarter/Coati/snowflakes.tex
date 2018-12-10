@@ -1,0 +1,35 @@
+\documentclass{beamer}
+
+\makeatletter
+\geometry{papersize={12.80cm,67.2cm}}
+\makeatother
+
+\setbeamertemplate{background canvas}{}
+\setbeamertemplate{background}{}
+\setbeamertemplate{navigation symbols}{}
+\usepackage{tikz}
+\pgfmathsetseed{\number\pdfrandomseed}
+
+\def\xmin{-1}
+\def\xmax{11.8}
+\def\ymin{6.1}
+\def\ymax{67.2}
+
+\usepackage{bbding}
+
+\begin{document}
+\begin{frame}
+\begin{tikzpicture}[remember picture, overlay,yshift=-38.4cm]
+
+\foreach \i in {0,...,3000}{
+
+	\pgfmathsetmacro{\x}{rnd}%
+	\pgfmathsetmacro{\y}{rnd}%
+	\pgfmathsetmacro{\s}{rnd}%
+
+	\node[white!95!black, scale=\s] at ({\x*(\xmax-\xmin)+\xmin},{sqrt(\y)*(\ymax-\ymin)+\ymin}) {\SnowflakeChevron};
+
+}	
+\end{tikzpicture}
+\end{frame}
+\end{document}

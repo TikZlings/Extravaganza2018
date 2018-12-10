@@ -1,0 +1,67 @@
+% !TeX TS-program = pdflatex
+\documentclass{beamer}
+
+\usepackage{tikz}
+\setbeamertemplate{navigation symbols}{}
+\usetikzlibrary{calc,decorations.markings}
+
+\setbeamertemplate{background canvas}{
+\begin{tikzpicture}[remember picture,overlay]
+	\node[at=(current page.center)]{%
+		\includegraphics[height=10cm]{./Vortex/Vortex_\thepage}
+	};
+	\node[at=(current page.south east),xshift=-6.4cm,yshift=0.2cm]{%
+		\tiny\color{white}\url{https://www.youtube.com/watch?v=QgA10wXkxbM}
+	};
+\end{tikzpicture}%     
+}
+
+\setbeamertemplate{background}{%
+\begin{tikzpicture}[remember picture,overlay,
+ decoration={markings, mark=at position \thepage/100 with {\pgfmathparse{0.1+0.3*\thepage/100}
+	\node {\includegraphics[scale=\pgfmathresult]{tardis}};
+}}
+]
+
+\path[postaction=decorate] 
+(0.0876, 0.8495) .. controls (3.0649, -0.8696) and (11.3233, -0.5675) .. (11.323, -4.0055) .. controls (11.3233, -8.0106) and (1.8446, -6.6581) .. (1.8848, -3.245) .. controls (1.9321, 0.7652) and (12.3109, -2.5782) .. (9.8706, -4.9467) .. controls (-1.3209, -8.8433) and (6.5692, 5.7354) .. (7.2573, -5.1385);
+\end{tikzpicture}%
+}
+
+\begin{document}
+
+\begin{frame}
+\pause[100]
+\end{frame}
+
+\setbeamertemplate{background}{}
+
+\begin{frame}
+
+\begin{tikzpicture}[remember picture,overlay]
+	\node at (6.2, -0.57) {\includegraphics[scale=0.4]{tardis}};
+	
+	\foreach \x in {0,0.01,...,1.4}{
+	
+		\only<+>{
+	
+			\fill<1-100>[black] (6.2-\x*1.46,-3.68) rectangle (6.2,1.2);
+			\fill<1-100>[black] (6.2+\x*1.46,-3.68) rectangle (6.2,1.2);
+			
+			\fill<101->[black] (6.2-1.46,-3.68) rectangle (6.2+1.46,1.2);
+	
+			\begin{scope}
+				\clip (6.2-\x*1.46,-3.68) rectangle (6.2+\x*1.46,1.2);
+				\node at (6.2, -1.8) {\includegraphics[width=2.5cm]{dr}};
+			\end{scope}
+	
+		}
+	
+	}
+
+\end{tikzpicture}
+\end{frame}
+
+\end{document}
+
+

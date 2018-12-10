@@ -1,0 +1,43 @@
+\documentclass{beamer}
+
+\makeatletter
+\geometry{papersize={12.80cm,67.2cm}}
+\makeatother
+
+\setbeamertemplate{background canvas}{}
+\setbeamertemplate{background}{}
+\setbeamertemplate{navigation symbols}{}
+\usepackage{tikz}
+\pgfmathsetseed{\number\pdfrandomseed}
+
+\def\xmin{-1}
+\def\xmax{11.8}
+\def\ymin{6.1}
+\def\ymax{67.2}
+
+\usepackage{bbding}
+
+\begin{document}
+\begin{frame}[label=conf]
+\begin{tikzpicture}[remember picture, overlay,yshift=-38.4cm]
+
+\foreach \i in {0,...,500}{
+
+	\pgfmathsetmacro{\x}{rnd}%
+	\pgfmathsetmacro{\y}{rnd}%
+	\pgfmathsetmacro{\s}{rnd}%
+	\pgfmathsetmacro{\r}{255*rnd}%
+	\pgfmathsetmacro{\g}{255*rnd}%
+	\pgfmathsetmacro{\b}{255*rnd}%
+	
+	\definecolor{confcol}{RGB}{\r,\g,\b}
+		
+	\fill[confcol] ({\x*(\xmax-\xmin)+\xmin},{sqrt(\y)*(\ymax-\ymin)+\ymin}) circle (0.1);
+
+}	
+\end{tikzpicture}
+\end{frame}
+
+\againframe{conf}
+
+\end{document}

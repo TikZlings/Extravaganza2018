@@ -1,0 +1,13 @@
+\documentclass{beamer}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{background canvas}{}
+
+\usepackage{pdfpages,tikz}
+
+\begin{document}
+
+\foreach \x in {1,...,50}{
+	\includepdf{\filename}
+}
+
+\end{document}

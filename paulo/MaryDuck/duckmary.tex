@@ -1,0 +1,22 @@
+\documentclass{standalone}
+
+\usepackage{graphicx}
+\usepackage{tikzducks}
+
+\begin{document}
+
+\begin{tikzpicture}[scale=3]
+\duck[
+  longhair=brown!40!black,
+  hat=black,
+  jacket=black!70!blue,
+  tshirt=white
+]
+
+\node [yshift=10pt] at (head) {\includegraphics[scale=.3]{imgs/flower}};
+\node [yshift=20pt, xshift=-15pt] at (wing) {\includegraphics[scale=.25, angle=-10]{imgs/bowtie}};
+
+\node [yshift=100pt, xshift=90pt] at (wing) {\includegraphics[scale=.45, angle=-35]{imgs/umbrella}};
+\end{tikzpicture}
+
+\end{document}

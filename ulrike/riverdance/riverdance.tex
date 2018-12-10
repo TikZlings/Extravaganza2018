@@ -1,0 +1,63 @@
+% !Mode:: "TeX:UTF-8:Main"
+% arara: pdflatex
+% arara: pdflatex
+% arara: convert: {density: 160, otheroptions: -dispose previous -delay 10 -loop 1, format: gif}
+\documentclass{beamer}
+
+\usepackage{tikz}
+\usepackage{bbold}
+\usepackage{fourier}
+\usetikzlibrary{overlay-beamer-styles}
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{tikzlings-marmots}
+\input{jumpmarmot}
+\newcommand\marmotsep{2cm}
+
+\begin{document}
+
+\begin{frame}<1->[plain,label=river]
+\begin{tikzpicture}[remember picture,overlay]
+	
+% Background image
+\node[at=(current page.center)]{%
+	\includegraphics[height=\paperheight]{stage}
+};	
+
+% Image credit of background
+%\node[at=(current page.south east),xshift=-6.4cm,yshift=0.2cm]{%
+%	\tiny\color{white}\url{https://wallpapersafari.com/download/NAk0W9/}
+%};
+\end{tikzpicture}
+\rule{0pt}{6cm}\jumpmarmot
+\setcounter{beamerpauses}{1}\hspace*{\marmotsep}%
+\jumpmarmot
+\setcounter{beamerpauses}{1}\hspace*{\marmotsep}%
+\jumpmarmot
+\setcounter{beamerpauses}{1}\hspace*{\marmotsep}%
+\jumpmarmot
+\setcounter{beamerpauses}{1}\hspace*{\marmotsep}%
+\jumpmarmot
+\setcounter{beamerpauses}{1}\hspace*{\marmotsep}%
+\jumpmarmot
+
+\vspace{0.5cm}
+\setcounter{beamerpauses}{1}
+\hspace*{1cm}%
+\rule{0pt}{2cm}%
+\jumpmarmot
+\setcounter{beamerpauses}{1}\hspace*{\marmotsep}%
+\jumpmarmot
+\setcounter{beamerpauses}{1}\hspace*{\marmotsep}%
+\jumpmarmot
+\setcounter{beamerpauses}{1}\hspace*{\marmotsep}%
+\jumpmarmot
+\setcounter{beamerpauses}{1}\hspace*{\marmotsep}%
+\jumpmarmot
+
+
+\end{frame}
+
+\againframe{river}
+\againframe<1-20>{river}
+\end{document} 

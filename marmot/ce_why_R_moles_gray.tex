@@ -1,0 +1,160 @@
+\documentclass[tikz,border=3.14mm]{standalone}
+\usetikzlibrary{decorations.pathmorphing,backgrounds}
+\usepackage{tikzlings}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{patterns,3d,shapes.callouts,calc,backgrounds}
+\tikzset{% from https://tex.stackexchange.com/a/303298/121799
+  erlenmeyer couleur/.code={\colorlet{erlenmeyer couleur}{#1}},
+  top couleur/.code={\colorlet{top couleur}{#1}},
+  couleur/.style={%
+    erlenmeyer couleur=#1,
+    top couleur=#1!50,
+  },
+  couleur=gray,
+  remplissage/.store in=\hauteurphase,
+  remplissage=-1cm,
+}
+\makeatletter % https://tex.stackexchange.com/a/48776/121799
+\tikzoption{canvas is xy plane at z}[]{%
+  \def\tikz@plane@origin{\pgfpointxyz{0}{0}{#1}}%
+  \def\tikz@plane@x{\pgfpointxyz{1}{0}{#1}}%
+  \def\tikz@plane@y{\pgfpointxyz{0}{1}{#1}}%
+  \tikz@canvas@is@plane
+}
+
+\newdimen\em@xa
+\newdimen\em@ya
+\newdimen\em@xb
+\newdimen\em@yb
+\newdimen\em@xc
+\newdimen\em@yc
+\pgfdeclareshape{erlenmeyer}{%
+  \nodeparts{text}%
+  \savedanchor{\mymacroname}{% manual 1035
+    \pgf@y=.5\ht\pgfnodeparttextbox % height of the box
+    \pgf@x=.5\wd\pgfnodeparttextbox % width of the box
+    \setlength{\pgf@xa}{.5\pgfshapeminwidth}%
+    \ifdim\pgf@x<.5\pgf@xa
+      \pgf@x=\pgf@xa
+    \fi
+  }%
+  \savedanchor{\topname}{% manual 1035
+    \pgf@y=1.85cm
+    \pgf@x=0pt
+  }%
+  \savedanchor{\downbelowname}{% manual 1035
+    \pgf@y=-2cm
+    \pgf@x=0pt
+  }%
+  \anchor{center}{\pgfpointorigin}%
+  \anchor{north}{\topname}%
+  \anchor{south}{\downbelowname}%
+  \anchor{text}{%
+    \mymacroname
+    \pgf@x=-\pgf@x
+    \pgf@y=-\pgf@y
+  }%
+  \savedanchor{\overthere}{%
+    \pgf@y=0pt
+    \pgf@x=1.6\hauteurphase
+  }%
+  \anchor{east}{\overthere}%
+  \savedanchor{\overhere}{%
+    \pgf@y=0pt
+    \pgf@x=-1.6\hauteurphase
+  }%
+  \anchor{west}{\overhere}%
+  \savedanchor{\upright}{%
+    \pgf@x=1.6\hauteurphase
+    \pgf@y=1.85cm
+  }%
+  \anchor{north east}{\upright}%
+  \anchor{south west}{%
+    \upright
+    \pgf@x=-\pgf@x
+    \pgf@y=-\pgf@y
+  }%
+  \anchor{south east}{%
+    \upright
+    \pgf@x=\pgf@x
+    \pgf@y=-\pgf@y
+  }%
+  \anchor{north west}{%
+    \upright
+    \pgf@x=-\pgf@x
+    \pgf@y=\pgf@y
+  }%
+  \backgroundpath{%
+    \em@xa=-5mm \em@ya=+17.5mm
+    \em@xb=+15mm \em@yb=+7.5mm
+    \downbelowname
+    \em@xc=\pgf@x \em@yc=1.1\pgf@y
+    \pgfpathmoveto{\pgfpoint{\em@xa}{\em@ya}}%
+    \pgfsetcornersarced{\pgfpoint{2pt}{2pt}}%
+    \pgfpathlineto{\pgfpoint{\em@xa}{\em@yb}}%
+    \pgfsetcornersarced{\pgfpoint{10pt}{10pt}}%
+    \pgfpathlineto{\pgfpoint{-\em@xb}{-\em@ya}}%
+    \pgfpathquadraticcurveto{\pgfpoint{\em@xc}{\em@yc}}{\pgfpoint{\em@xb}{-\em@ya}}%
+    \pgfsetcornersarced{\pgfpoint{2pt}{2pt}}%
+    \pgfpathlineto{\pgfpoint{-\em@xa}{\em@yb}}%
+    \pgfsetcornersarced{\pgfpointorigin}%
+    \pgfpathlineto{\pgfpoint{-\em@xa}{\em@ya}}%
+    \pgfpathmoveto{\pgfpoint{\em@xa}{\em@ya}}%
+    \pgfpathellipse{\pgfpoint{0pt}{\em@ya}}{\pgfpoint{5mm}{0mm}}{\pgfpoint{0mm}{1mm}}%
+  }%
+  \beforebackgroundpath{%
+    \path [clip] (-0.5,1.75) to [rounded corners=2pt] ++(0,-1) to [rounded corners=10pt] ++(-1,-2.5) to [rounded corners=10pt, bend right=15pt] ++(3,0) to [rounded corners=2pt] ++(-1,2.5)-- ++(0,1) ++(-0.5,0) circle [x radius=0.5, y radius=0.1];
+    \path [fill=erlenmeyer couleur] (-1.6,-2) rectangle (1.6,{\hauteurphase-2cm});
+    \path [draw=white, fill=top couleur] (0,\hauteurphase-2cm) circle [x radius=1.5cm-(\hauteurphase-0.25cm)*0.4 , y radius=0.1 cm];
+  }%
+}
+\makeatother
+\begin{document}
+\tdplotsetmaincoords{110}{30}
+\foreach \n [count=\X] in {0,0.1,...,4}{\begin{tikzpicture}
+\clip (-16,-4) rectangle (16,16);
+\begin{scope}[tdplot_main_coords,scale=4]
+% \draw[-latex] (0,0,0) -- (1,0,0) node[pos=1.2] {$x$};
+% \draw[-latex] (0,0,0) -- (0,1,0) node[pos=1.2] {$y$};
+%
+\begin{scope}
+\draw[fill=gray!20] (-4,-3,0) -- (3,-3,0) -- (3,-3,5) -- (-4,-3,5) -- cycle;
+\draw[fill=gray!40] (3,-3,0) -- (3,3,0) -- (3,3,5) -- (3,-3,5) -- cycle;
+\draw[fill=brown!50!black] (-4,-3,0) -- (3,-3,0) -- (3,5,0) -- (-7,3,0) -- cycle;
+\end{scope}
+\begin{scope}[canvas is xz plane at y=-1.4]
+\moles[body=blue];
+\end{scope}
+\draw[very thick] (-0.7,0.6,0) -- (-0.7,0.6,1.2);
+\draw[fill=white] (-1.4,0,1.1)  -- (0,0,1.1) -- (0,1.2,1.1)
+-- (-1.4,1.2,1.1) -- cycle;
+\begin{scope}[canvas is xz plane at y=0.6,remplissage = 2mm,scale=0.2,transform shape]
+\node[erlenmeyer, draw=magenta!50!black, top color=white, bottom color=orange!50!magenta, thick, couleur=magenta] 
+at (-2.5,7) {~};
+\node [erlenmeyer,draw=blue, double=cyan, couleur=blue!50!cyan,
+ bottom color=cyan,top color=cyan!10] at (-5,7.7) {~};
+\end{scope}
+\end{scope}
+\ifnum\X>10 % from https://tex.stackexchange.com/a/218029/121799
+%\clip (-5,4) rectangle (5,10);
+\foreach \i in {1,...,10}
+\fill [gray, even odd rule, opacity=0.125, decoration={random steps, amplitude=.125cm*\n, segment length=.125cm}, decorate]
+(\n-2,\n*3+1) arc (0:360:\n\space and \n/4) arc (360:0:\n\space and \n/4) -- cycle;
+\clip (-16,\n*3+1) rectangle (15,-16);
+\begin{scope}[tdplot_main_coords,scale=4]
+\begin{scope}[canvas is xz plane at y=-1.4]
+\moles;
+\end{scope}
+\draw[very thick] (-0.7,0.6,0) -- (-0.7,0.6,1.2);
+\draw[fill=white] (-1.4,0,1.1)  -- (0,0,1.1) -- (0,1.2,1.1)
+-- (-1.4,1.2,1.1) -- cycle;
+\begin{scope}[canvas is xz plane at y=0.6,remplissage = 2mm,scale=0.2,transform shape]
+\node[erlenmeyer, draw=magenta!50!black, top color=white, bottom color=orange!50!magenta, thick, couleur=magenta] 
+at (-2.5,7) {~};
+\node [erlenmeyer,draw=blue, double=cyan, couleur=blue!50!cyan,
+ bottom color=cyan,top color=cyan!10] at (-5,7.7) {~};
+\end{scope}
+\end{scope}
+\fi
+\end{tikzpicture}}
+\end{document}

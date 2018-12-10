@@ -1,0 +1,61 @@
+\newcommand\jumpmarmot{%
+ \foreach \x in {1,...,10}{%
+ \only<+>{%
+	\begin{tikzpicture}[overlay]
+		\marmot[leftstep]
+		\node at (0.15,1.5) {\includegraphics{kilt}};
+		\fill[brown!40!black,
+           rotate around={-70:(-0.385,0.93)}] (-0.385,0.93) ellipse (0.24 and 0.13);
+		\path (0,0) rectangle (0,3);
+	\end{tikzpicture}}%
+\only<+>{%	
+	\begin{tikzpicture}[overlay]
+		\marmot[rightstep]
+		\node at (0.15,1.5) {\includegraphics{kilt}};
+		\fill[brown!40!black,
+        rotate around={-70:(-0.385,0.93)}] (-0.385,0.93) ellipse (0.24 and 0.13);
+		\path (0,0) rectangle (0,3);
+	\end{tikzpicture}}%	
+}%		
+\only<+>{%
+   \begin{tikzpicture}[overlay]
+    \marmot[yshift=0.3cm]
+    \node[yshift=0.3cm] at (0.15,1.5) {\includegraphics{kilt}};
+    \fill[yshift=0.3cm,brown!40!black,
+      rotate around={-70:(-0.385,0.93)}] (-0.385,0.93) ellipse (0.24 and 0.13);
+    \path (0,0) rectangle (0,3);
+   \end{tikzpicture}}%	
+\only<+>{%
+   \begin{tikzpicture}[overlay]
+   \marmot[yshift=1cm]
+   \node[yshift=1cm] at (0.15,1.5) {\includegraphics{kilt}};
+   \fill[yshift=1cm,brown!40!black,
+    rotate around={-70:(-0.385,0.93)}] (-0.385,0.93) ellipse (0.24 and 0.13);
+   \path (0,0) rectangle (0,3);
+   \end{tikzpicture}}%	
+\only<+>{%
+   \begin{tikzpicture}[overlay]
+   \marmot[yshift=0.3cm]
+   \node[yshift=0.3cm] at (0.15,1.5) {\includegraphics{kilt}};
+   \fill[yshift=0.3cm,brown!40!black,
+   rotate around={-70:(-0.385,0.93)}] (-0.385,0.93) ellipse (0.24 and 0.13);
+   \path (0,0) rectangle (0,3);
+   \end{tikzpicture}}%	
+\foreach \x in {1,...,10}{%
+  \only<+>{%
+    \begin{tikzpicture}[overlay]
+		\marmot[leftstep]
+		\node at (0.15,1.5) {\includegraphics{kilt}};
+		\fill[brown!40!black,
+        rotate around={-70:(-0.385,0.93)}] (-0.385,0.93) ellipse (0.24 and 0.13);
+		\path (0,0) rectangle (0,3);
+	\end{tikzpicture}}%	
+  \only<+>{%
+    \begin{tikzpicture}[overlay]
+		\marmot[rightstep]
+		\node at (0.15,1.5) {\includegraphics{kilt}};
+		\fill[brown!40!black,
+         rotate around={-70:(-0.385,0.93)}] (-0.385,0.93) ellipse (0.24 and 0.13);
+		\path (0,0) rectangle (0,3);
+	\end{tikzpicture}}%	
+}}

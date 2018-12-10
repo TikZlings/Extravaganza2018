@@ -1,0 +1,61 @@
+\documentclass{beamer}
+
+\usepackage{tikz}
+\usepackage{bbding}
+\usepackage{tikzlings}
+\usetikzlibrary{overlay-beamer-styles}
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamercolor{background canvas}{bg=gray}
+
+\begin{document}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+	
+% Background image
+\node[at=(current page.center)]{%
+	\includegraphics[height=\paperheight]{Jungle.jpg}
+};	
+
+% Image credit of background
+\node[at=(current page.south east),xshift=-6.6cm,yshift=0.2cm]{%
+	\tiny\color{white}\url{https://commons.wikimedia.org/wiki/File:Jungle._Sarawak,_Borneo._Malaysia_(14766487031).jpg}
+};
+
+% Coati with rotating head
+\foreach \x in {0,2,...,1000}{
+	\only<+>{
+		\coati[scale=1.5,xshift=0.9cm,yshift=-2.7cm,rotatehead=sin(\x)*15]
+	}
+} 
+
+% Draw thinking bubble
+\begin{scope}[scale=2.5,xshift=-0.4cm,yshift=-2.1cm]
+	\fill<50-150>[gray!5!white] (1.47,1.70) circle (0.03);
+	\fill<70-150>[gray!5!white] (1.55,1.80) circle (0.06);
+	\fill<90-150>[gray!5!white] (1.65,1.95) circle (0.1);
+	\fill<110-150>[gray!5!white] (2,2.4) ellipse (0.7 and 0.35); 
+	\fill<110-150>[gray!5!white] (1.55,2.35) circle (0.25) (2.0,2.15) circle (0.25) (2.4,2.25) circle (0.25) (1.6,2.55) circle (0.25) (2.0,2.6) circle (0.25) (2.35,2.5) circle (0.25) ;
+\end{scope}
+
+% snowman
+\only<110-150>{	
+	\begin{scope}[scale=0.7,xshift=5.7cm,yshift=-0.4cm]
+		\snowman[3D]
+		\thing[tophat,xshift=-0.05cm]
+	\end{scope}
+}
+
+% snowflakes
+\only<200->{
+	\node at ({5.4+0.5*sin(\thepage)},{28.8-0.0972*(\thepage-200)}) {\includegraphics[width=\paperwidth]{snowflakes}};
+}
+
+\end{tikzpicture}
+
+\end{frame}
+
+
+
+\end{document}

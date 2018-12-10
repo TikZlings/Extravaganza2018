@@ -1,0 +1,28 @@
+% !TeX TS-program = pdflatex
+\documentclass{beamer}
+
+\usepackage{tikz}
+\usetikzlibrary{overlay-beamer-styles}
+\setbeamertemplate{navigation symbols}{}
+
+\begin{document}
+
+\begin{frame}
+\begin{tikzpicture}[overlay,remember picture]
+	
+	% background image
+	\node[anchor=center] at (current page.center){\includegraphics[width=1.2\paperwidth]{jodelbg}};
+	
+	
+	% marmot
+	\node at (8,-3.5) {\includegraphics[width=1.5cm]{jodelmarmot}};
+	
+	% mouth
+	\foreach \x in {0,7,...,3360}{
+		\fill<+>[brown!50!black] (7.78,-3.39) ellipse ({sin(\x)*0.12*0.75} and {cos(\x)*0.04*0.75});
+	}
+	
+\end{tikzpicture}
+\end{frame}
+
+\end{document} 

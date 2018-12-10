@@ -1,0 +1,45 @@
+% !Mode:: "TeX:UTF-8:Main"
+% arara: pdflatex
+% arara: convert: {density: 160, otheroptions: -dispose previous -delay 10 -loop 1, format: gif}
+% arara: showfile: {format: gif}
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\geometry{papersize={128mm,96mm},margin=0.5cm} %\textwidth=11.8, \textheight=8.6
+\usepackage[svgnames,x11names]{xcolor}
+\usepackage[osf]{AlegreyaSans}
+\usepackage{eso-pic}
+\usepackage{xfp}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{%
+  shapes,
+  decorations.shapes,
+  decorations.fractals,
+  decorations.markings,
+  shadows
+}
+
+\usepackage{tikzducks}
+
+
+\begin{document}
+\AddToShipoutPictureBG{%
+ \AtPageLowerLeft{%
+ \includegraphics{extravaganza-intermission-background}}}
+ 
+
+\mbox{}
+
+\medskip
+
+{\centering\Huge\sffamily
+\bfseries\scshape
+
+\vspace{4\baselineskip}%adjust
+Nat King Coati
+\par}
+
+\vfill
+\strut
+\end{document}

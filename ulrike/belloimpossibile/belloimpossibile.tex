@@ -1,0 +1,58 @@
+% !Mode:: "TeX:UTF-8:Main"
+% arara: pdflatex
+% xarara: pdflatex
+% arara: convert: {density: 160, otheroptions: -dispose previous -delay 10 -loop 0, format: gif}
+\PassOptionsToPackage{svgnames}{xcolor}
+\documentclass{beamer}
+
+\usepackage{tikz}
+\usepackage{bbold}
+\usepackage{fourier}
+\usetikzlibrary{overlay-beamer-styles}
+\setbeamertemplate{navigation symbols}{}
+\usetikzlibrary{shadings}
+\usepackage{tikzlings-marmots,tikzducks}
+\input{coil-code}
+\usepackage{xfp,fontawesome}
+\ExplSyntaxOn
+\let\intmodnn\int_mod:nn
+\ExplSyntaxOff
+\begin{document}
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth]{CIMG3479}}
+\makeatletter
+
+\begin{frame}<1->[plain,label=bello]
+\vspace*{2.6cm}\hspace*{0.8cm}
+\foreach \X [evaluate=\X as \Y using {sin(\X)}]in %{0,1} 
+{0,10,...,350}
+{\only<+>{%
+\begin{tikzpicture}
+\path[use as bounding box] (-1,-0.2) rectangle (1,4);
+\draw[decoration={3d coil color=Goldenrod,aspect=0.35, segment
+length={(1.2+0.7*\Y)*1mm}, amplitude=3mm,3d coil},
+decorate] (0,0) -- (0,2);
+\begin{scope}[shift={(0,1+0.5*\Y)}]
+\marmot[3D,teeth,whiskers]
+\end{scope}
+\end{tikzpicture}}}%
+\begin{tikzpicture}[overlay,remember picture]
+\shade[ball color=Goldenrod]%
+%[left color=red,right color=red,middle color=blue,]
+([xshift=3.2cm]current page.south west) --++(2,3.5)--++(0.9,0)--([xshift=10cm]current page.south west);
+\end{tikzpicture}%\show\beamer@slideinframe%
+\begin{tikzpicture}[overlay]
+\begin{scope}[yshift=-1cm,xshift=1cm]
+\duck[crazyhair=black,jacket=black,\ifnum \intmodnn{\beamer@slideinframe}{6} > 3 laughing\fi]
+\node[Silver] (micro) at ([xshift=-0.5cm]wing) {\faMicrophone};
+\draw[Silver,line width=2pt]([yshift=2mm]micro.south)--++(0,-1cm);
+\end{scope}
+\end{tikzpicture}%
+
+
+\end{frame}
+
+\againframe{bello}
+\againframe{bello}
+\againframe{bello}
+\againframe{bello}
+\end{document} 

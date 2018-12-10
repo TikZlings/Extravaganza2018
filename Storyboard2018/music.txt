@@ -1,0 +1,147 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ton Nasenbär „White Christmas“
+
+ab 0:16
+
+https://www.bing.com/videos/search?q=i+am+dreaming+of+a+white+christmas+chords&view=detail&mid=3D6BED26A9163779F1473D6BED26A9163779F147&FORM=VRRTAP
+
+youtube-dl -f 140 https://www.youtube.com/watch?v=cAdAiv8j9fY
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ton Sloth „Wandering Star“
+
+ab 1:14
+
+https://www.bing.com/videos/search?q=i+was+born+under+a+wandering+star&view=detail&mid=68B5EB27958E6DAF5DF268B5EB27958E6DAF5DF2&FORM=VRRTAP
+
+youtube-dl -f 140 https://www.youtube.com/watch?v=xnbiRDNaDeo
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ton Rockenten
+
+https://www.bing.com/videos/search?q=paranoid&view=detail&mid=85168B2A9E551DBE6EE485168B2A9E551DBE6EE4&FORM=VRRTAP
+
+youtube-dl -f 140 https://www.youtube.com/watch?v=Uq42HUUJFzU
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ton Riverdance Marmots
+
+Ab 0:46
+
+https://www.bing.com/videos/search?q=riverdance&view=detail&mid=AA3442F6368A73B31799AA3442F6368A73B31799&FORM=VRRTAP
+
+youtube-dl -f 140 https://www.youtube.com/watch?v=HHNZuj6U8jo
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ton Cello Stille Nacht
+
+https://www.bing.com/videos/search?q=stille+nacht+cello+solo&view=detail&mid=2E5C0C541E4AC3A346A32E5C0C541E4AC3A346A3&FORM=VRRTAP
+
+youtube-dl -f 140 https://www.youtube.com/watch?v=uIqbE0Ylh9o
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ton Jodelndes Marmot
+
+1:26 bis 1:42
+
+https://www.bing.com/videos/search?q=erzherzog+johann+jodler+youtube&view=detail&mid=13E82073058A757116E113E82073058A757116E1&FORM=VRRTAP
+
+youtube-dl -f 140 https://www.youtube.com/watch?v=wTR1DszoQuI
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ton zu „ A Duck finishes his thesis“
+
+https://www.bing.com/videos/search?q=cheering&view=detail&mid=6C29C81107A66FF6408D6C29C81107A66FF6408D&FORM=VRRTAP
+
+youtube-dl -f 140 https://www.youtube.com/watch?v=vI0l1y1cAVI
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ton Commercial Break
+
+https://www.bing.com/videos/search?q=surfing+usa&view=detail&mid=5FBA921FD68CC8B343E15FBA921FD68CC8B343E1&FORM=VRRTAP
+
+youtube-dl -f 140 https://www.youtube.com/watch?v=2fGaBv8pAMA
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ton Mäuse „We wish you a merry Christmas“
+
+https://www.bing.com/videos/search?q=we+wish+you+a+merry+christmas&view=detail&mid=F1044922A21B4F8F31F1F1044922A21B4F8F31F1&FORM=VRRTAP
+
+youtube-dl -f 140 https://www.youtube.com/watch?v=IeubyGE3KRs
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ton Dr. WHO
+
+https://www.bing.com/videos/search?q=dr+who+soundtrack&view=detail&mid=4BF666ABC262FE1BB58E4BF666ABC262FE1BB58E&FORM=VRRTAP
+
+youtube-dl -f 140 https://www.youtube.com/watch?v=VkcHgI_TIYQ
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ton „Bello e impossibile“
+
+https://www.bing.com/videos/search?q=bello+e+impossibile&view=detail&mid=E01ACFF761DC77622D6EE01ACFF761DC77622D6E&FORM=VRRTAP
+
+youtube-dl -f 140 https://www.youtube.com/watch?v=xoco58gF8h0
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ton Schlussbild „Freude...“ ab 0:40
+
+https://www.bing.com/videos/search?q=freude+schoner+gotterfunken&view=detail&mid=36C9C3E13A3B475AB68536C9C3E13A3B475AB685&FORM=VRRTAP
+
+youtube-dl -f 140 https://www.youtube.com/watch?v=piJXGl8uSLU
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ton „Phantom der Oper“
+
+Ab 0:22 bis ca. 0:36
+
+https://www.bing.com/videos/search?q=phantom+der+oper&view=detail&mid=5C930AA044E0E4F7F6B15C930AA044E0E4F7F6B1&FORM=VRRTAP
+
+youtube-dl -f 140 https://www.youtube.com/watch?v=pgz6PnHkmpY
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ton „Triumphmarsch Aida“
+
+https://www.bing.com/videos/search?q=triumphmarsch+aida&view=detail&mid=D78E6E04D99D44E5ED12D78E6E04D99D44E5ED12&FORM=VRRTAP
+
+youtube-dl -f 140 https://www.youtube.com/watch?v=zH4oUX2fvCw
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ton "Marmot Lisas Smile"
+
+youtube-dl -f 140 https://www.youtube.com/watch?v=NIDX18Xl16s
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ton "Carla Driving through Utah"
+
+youtube-dl -f 140 https://www.youtube.com/watch?v=cXm0QPPTb9g
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ton Jigsaw "Bella Notte"
+
+ca. 0.15-0.27
+
+youtube-dl -f 140 https://www.youtube.com/watch?v=0HAt1PNT_zc
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Scouts "I Met A Bear"
+
+youtube-dl -f 140 https://www.youtube.com/watch?v=fMzmSnQjEdY

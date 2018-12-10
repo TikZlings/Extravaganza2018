@@ -1,0 +1,80 @@
+\documentclass{beamer}
+
+\usepackage{tikz}
+\usetikzlibrary{overlay-beamer-styles}
+\setbeamertemplate{navigation symbols}{}
+
+\setbeamercolor{title}{bg=white,fg=black}
+
+\begin{document}
+
+\begin{frame}<1->[label={rock}]
+
+\begin{tikzpicture}[remember picture,overlay]
+	
+% Background image
+\node[at=(current page.center)]{%
+	\includegraphics[height=\paperheight]{rock_back}
+};	
+
+% Guitares
+\foreach \x in {-10,...,3}{
+	
+	% red
+	\node[at=(current page.center), rotate around={\x:(-3.2,-2)}]{%
+		\includegraphics<+>[height=\paperheight]{rock_red}
+	};
+	
+	% blue
+	\node[at=(current page.center), rotate around={-\x:(0,-3)}]{%
+		\includegraphics<.>[height=\paperheight]{rock_blue}
+	};
+	
+	% green	
+	\node[at=(current page.center), rotate around={\x:(3.2,-1.6)}]{%
+		\includegraphics<.>[height=\paperheight]{rock_green}
+	};
+
+}
+\foreach \x in {3,...,-10}{
+
+	% red
+	\node[at=(current page.center), rotate around={\x:(-3.2,-2)}]{%
+		\includegraphics<+>[height=\paperheight]{rock_red}
+	};
+	
+	% blue
+	\node[at=(current page.center), rotate around={-\x:(0,-3)}]{%
+		\includegraphics<.>[height=\paperheight]{rock_blue}
+	};
+	
+	% green	
+	\node[at=(current page.center), rotate around={\x:(3.2,-1.6)}]{%
+		\includegraphics<.>[height=\paperheight]{rock_green}
+	};
+
+}
+
+% Light
+\node[at=(current page.center)]{%
+	\includegraphics[height=\paperheight]{rock_lights}
+};			
+\end{tikzpicture}
+\end{frame}
+
+\againframe{rock}
+\againframe{rock}
+\againframe{rock}
+\againframe{rock}
+\againframe{rock}
+\againframe{rock}
+\againframe{rock}
+\againframe{rock}
+\againframe{rock}
+\againframe{rock}
+\againframe{rock}
+\againframe{rock}
+\againframe{rock}
+\againframe{rock}
+
+\end{document}

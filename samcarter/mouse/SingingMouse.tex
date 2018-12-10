@@ -1,0 +1,62 @@
+% !TeX TS-program = pdflatex
+\documentclass{beamer}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{background canvas}{\includegraphics[height=\paperheight]{Mouse_bg}}
+\usepackage{tikz}
+\usepackage{tikzlings}
+\usepackage{tikzducks}
+
+\usepackage{xfp}
+\ExplSyntaxOn
+\let\intmodnn\int_mod:nn
+\ExplSyntaxOff
+
+\begin{document}
+	
+\begin{frame}[plain,label=singing]%
+\begin{tikzpicture}[remember picture, overlay]%
+\foreach \x in {1,...,60}{
+	\node at (1,-3.5) {
+		\ifnum \intmodnn{\thepage}{6} > 2
+			\includegraphics<+>[width=3cm]{mouse_close}%
+		\else
+			\includegraphics<+>[width=3cm]{mouse_open}%
+		\fi%
+	};	
+	\node at (5.5,-3) {
+		\ifnum \intmodnn{\thepage}{6} > 3
+			\includegraphics<.>[width=3cm]{mouse_close}%
+		\else
+			\includegraphics<.>[width=3cm]{mouse_open}%
+		\fi%
+	};
+	\node at (3.35,-4) {
+		\ifnum \intmodnn{\thepage}{6} > 2
+			\includegraphics<.>[width=3cm]{mouse_close}%
+		\else
+			\includegraphics<.>[width=3cm]{mouse_open}%
+		\fi%
+	};			
+	\node at (7.5,0.4) {\includegraphics<.>[width=0.6cm,page=\x]{./baubles/bauble_bear}};
+	\node at (10.3,-1.6) {\includegraphics<.>[width=0.6cm,page=\x]{./baubles/bauble_coati}};
+	\node at (7.2,-1.6) {\includegraphics<.>[width=0.6cm,page=\x]{./baubles/bauble_koala}};
+	\node at (8.8,-0.2) {\includegraphics<.>[width=0.6cm,page=\x]{./baubles/bauble_marmot}};
+	\node at (9,-2) {\includegraphics<.>[width=0.6cm,page=\x]{./baubles/bauble_owl}};
+	\node at (10,0.6) {\includegraphics<.>[width=0.6cm,page=\x]{./baubles/bauble_pingue}};
+}
+\duck[scale=0.3,xscale=-1,yshift=-0.8cm,xshift=-2cm]
+\duck[scale=0.3,xscale=-1,yshift=-0.8cm,xshift=-5.5cm]
+\duck[scale=0.3,xscale=-1,yshift=-0.8cm,xshift=-9cm]
+\duck[scale=0.3,xscale=-1,yshift=-0.8cm,xshift=-12.5cm]
+\duck[scale=0.3,xscale=-1,yshift=-0.8cm,xshift=-16cm]
+\thing[santa=yellow!60!brown!60!orange,yshift=-4.4cm,xshift=0.3cm]
+\thing[santa=blue!70!black,yshift=-3.9cm,xshift=4.8cm]
+\thing[santa,yshift=-4.9cm,xshift=2.65cm]
+\fill[white!80!brown] (0,-4.2) rectangle ++(0.65,0.4);
+\fill[white!80!brown] (4.5,-3.7) rectangle ++(0.65,0.4);
+\fill[white!80!brown] (2.35,-4.7) rectangle ++(0.65,0.4);
+\end{tikzpicture}%
+\end{frame}
+	
+\end{document}

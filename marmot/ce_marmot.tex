@@ -1,0 +1,41 @@
+\documentclass[tikz,border=3.14mm]{standalone}
+\usepackage{tikzlings}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{3d,shapes.callouts,calc}
+\makeatletter % https://tex.stackexchange.com/a/48776/121799
+\tikzoption{canvas is xy plane at z}[]{%
+  \def\tikz@plane@origin{\pgfpointxyz{0}{0}{#1}}%
+  \def\tikz@plane@x{\pgfpointxyz{1}{0}{#1}}%
+  \def\tikz@plane@y{\pgfpointxyz{0}{1}{#1}}%
+  \tikz@canvas@is@plane
+}
+\makeatother
+\begin{document}
+\tdplotsetmaincoords{110}{30}
+\begin{tikzpicture}
+\clip (-4,-1) rectangle (4,4);
+\begin{scope}[tdplot_main_coords]
+\draw[-latex] (0,0,0) -- (1,0,0) node[pos=1.2] {$x$};
+\draw[-latex] (0,0,0) -- (0,1,0) node[pos=1.2] {$y$};
+%
+\draw[fill=gray!20] (-4,-3,0) -- (3,-3,0) -- (3,-3,5) -- (-4,-3,5) -- cycle;
+\draw[fill=gray!40] (3,-3,0) -- (3,3,0) -- (3,3,5) -- (3,-3,5) -- cycle;
+\draw[fill=brown!50!black] (-4,-3,0) -- (3,-3,0) -- (3,5,0) -- (-7,3,0) -- cycle;
+\draw[fill=white] (-2.4,-2.8,0.5)  -- (0.8,-2.8,0.5) -- (0.8,-1.2,0.5)
+-- (-2.4,-1.2,0.5) -- cycle;
+\shade[top color=gray!10,bottom color=gray!20] 
+plot[variable=\x,domain=0:0.8] (-1.5,{-2-\x},{1.6-1.1*\x*\x/0.64})
+-- plot[variable=\x,domain=0.8:0] (0.8,{-2-\x},{1.16-\x*\x/0.96})
+to[out=160,in=0] cycle;
+\begin{scope}[canvas is xz plane at y=-1.4]
+\marmot[whiskers,teeth,yscale=-1,rotate=87,xshift=-11mm,yshift=2mm];
+\end{scope}
+\shade[top color=gray!10,bottom color=gray!20] 
+plot[variable=\x,domain=0:0.8] (-1.5,{-2+\x},{1.6-1.1*\x*\x/0.64})
+-- plot[variable=\x,domain=0.8:0] (0.8,{-2+\x},{1.16-\x*\x/0.96})
+to[out=160,in=0] cycle;
+\fill (-2.4,-1.2,0) -- (0.8,-1.2,0) -- (0.8,-1.2,0.5) -- (-2.4,-1.2,0.5)
+-- (-2.4,-2.8,0.5)  -- (-2.4,-2.8,0);
+\end{scope}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,41 @@
+\documentclass{beamer}
+
+\usepackage{tikz}
+\usetikzlibrary{overlay-beamer-styles,decorations.markings,calc}
+\setbeamertemplate{navigation symbols}{}
+
+\begin{document}
+\foreach \X [count=\Y] in {0,0.003,...,1}
+{	
+\begin{frame}[plain]%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{tikzpicture}[remember picture,overlay]
+  	\node[at=(current page.center),xshift=6cm]{
+   		\includegraphics[height=\paperheight]{Monumentvalley_clean}
+		};
+% 	\draw (12,-4)	 to[out=180,in=0] (10,-4.2)
+% 	to[out=180,in=0] (5,-3.6)
+% 	to[out=180,in=24] (3,-4.35)
+% 	to[out=204,in=40] (1,-5)
+% 	to[out=220,in=20] (-2,-6.5);
+	\coordinate (R) at (0,-3);
+	\draw[yshift=-1mm,decorate,decoration={markings,
+	mark=at position {\X} with {\path (-1,0) coordinate (XL) (1,0) coordinate (XR);
+	\pgftransformreset
+	\path let \p1=($(R)-(XL)$),\p2=($(XR)-(XL)$),
+	\n1={180-0.5*(atan2(\y2,\x2)-180)},\n2={ifthenelse(abs(\n1)<270,\n1,\n1-180)},
+	\n3={sqrt(\y1/83)-0.2*sin(\X*210-30)}
+	in \pgfextra{\typeout{\n3,\n1}}
+	 (XL) -- (XR) node[midway,anchor=south,rotate=\n2,scale=\n3]  
+	 {\includegraphics[height=1.5cm]{carlatex}};}}] (12,-4)	 to[out=180,in=0] (10,-4.2)
+	to[out=180,in=0] (5,-3.6)
+	to[out=180,in=24] (3,-4.35)
+	to[out=204,in=40] (1,-5)
+	to[out=220,in=20] (-2,-6.5);
+		\node[at=(current page.south east),xshift=-3.2cm,yshift=0.2cm]{\tiny\color{white}\url{https://en.wikipedia.org/wiki/File:Monumentvalley.jpg}};
+  	\node[at=(current page.center),xshift=6cm]{
+   		\includegraphics[height=\paperheight]{Monumentvalley_fg}
+		};		
+	\end{tikzpicture}
+\end{frame}}
+
+\end{document}

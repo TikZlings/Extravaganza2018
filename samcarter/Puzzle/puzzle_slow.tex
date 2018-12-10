@@ -1,0 +1,25 @@
+\documentclass{beamer}
+
+\setbeamertemplate{navigation symbols}{}
+\usepackage{tikz}
+\usepackage{pdfpages}
+
+\begin{document}
+
+\setbeamercolor{background canvas}{bg=}
+
+\foreach \x in {1,...,132}{
+	
+\includepdf[pages=\x]{puzzle.pdf}
+\includepdf[pages=\x]{puzzle.pdf}
+\includepdf[pages=\x]{puzzle.pdf}	
+
+}
+
+\foreach \x in {1,...,30}{
+	
+\includepdf[pages=132]{puzzle.pdf}		
+
+}	
+	
+\end{document}

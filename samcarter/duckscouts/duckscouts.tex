@@ -1,0 +1,31 @@
+\documentclass{beamer}
+
+\usepackage{tikz}
+\usepackage{tikzlings}
+\usetikzlibrary{overlay-beamer-styles}
+\setbeamertemplate{navigation symbols}{}
+
+\begin{document}
+
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+	
+% Background image
+\node[at=(current page.center)]{%
+	\includegraphics[height=\paperheight]{Weide-Wiese-Vergleich.jpg}
+};	
+
+% Image credit of background
+\node[at=(current page.south east),xshift=-6.4cm,yshift=0.2cm]{%
+	\tiny\color{white}\url{https://de.wikipedia.org/wiki/Datei:Weide-Wiese-Vergleich.jpg}
+};
+
+\foreach \x in {0.25,0.2515,...,1}{
+	\node<+>[scale=\x] at (23*\x-7.1,{-4.4*\x+1.1}) {\includegraphics[height=4cm]{scout}};	
+	\only<.>{\bear[scale=1.5,xshift=0.5cm,yshift=(-9+6*\x)*1cm]} 
+}
+
+\end{tikzpicture}
+\end{frame}
+
+\end{document}

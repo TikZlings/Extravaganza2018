@@ -1,0 +1,105 @@
+\documentclass{beamer}
+
+\usepackage{tikzducks}
+\usepackage{tikzlings}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{background canvas}{\includegraphics[height=\paperheight]{museum}}
+
+\newcommand{\tourist}{%
+	\coati[
+		scale=1.6, 
+		xshift=2cm, 
+		yshift=-3.6cm,
+		sideward,
+		xscale=-1,
+		rotatehead=20,
+		book={\tiny Guide}
+	]
+	\thing[
+		scale=1.6, 
+		xshift=2.7cm, 
+		yshift=-3.55cm,
+		strawhat,
+		rotate=20
+	]
+}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Mona Marmot
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}<1->[plain]
+	\transduration{0}
+	\begin{tikzpicture}[remember picture, overlay]
+		\foreach \x in {11,10.9,...,-10.25}{	
+			\node<+>[xshift=\x cm] at (current page.center) {\includegraphics[width=\paperwidth]{MonaLisa}};
+		}
+		\tourist
+	\end{tikzpicture}	
+\end{frame}	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Girl with pearl earing
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}<1->[plain]
+	\transduration{0}
+	\begin{tikzpicture}[remember picture, overlay]		
+		\foreach \x in {12.5,12.4,...,-7.5}{	
+			\node<+>[xshift=\x cm] at (current page.center) {\includegraphics[width=\paperwidth]{GirlWithPearlEarring}};
+		}
+		\tourist	
+	\end{tikzpicture}	
+\end{frame}	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Venus
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}<1->[plain]
+	\transduration{0}
+	\begin{tikzpicture}[remember picture, overlay]		
+		\foreach \x in {8.75,8.65,...,-8.5}{	
+			\node<+>[xshift=\x cm] at (current page.center) {\includegraphics[width=\paperwidth]{Venus}};
+		}
+		\tourist	
+	\end{tikzpicture}	
+\end{frame}	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Scream
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}<1->[plain]
+	\transduration{0}
+	\begin{tikzpicture}[remember picture, overlay]		
+		\foreach \x in {11,10.90,...,-10.25}{	
+			\node<+>[xshift=\x cm] at (current page.center) {\includegraphics[width=\paperwidth]{Scream}};
+		}
+		\tourist	
+	\end{tikzpicture}	
+\end{frame}	
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Pop Art
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}<1->[plain]
+	\transduration{0}
+	\begin{tikzpicture}[remember picture, overlay]		
+		\foreach \x in {9,8.9,...,-8.5}{	
+			\node<+>[xshift=\x cm] at (current page.center) {\includegraphics[width=\paperwidth]{PopArt}};
+		}
+		\tourist	
+	\end{tikzpicture}	
+\end{frame}		
+	
+\end{document}
